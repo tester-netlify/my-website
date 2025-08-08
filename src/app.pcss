@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+/* May be externalize fonts? @import url(./fonts/font-collection.css);  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --custom-dark-blue: #012c42;
+  --custom-bright-blue: #008ac4;
+  --custom-teal: #007388;
+  --custom-cyan: #00b3d4;
+  --custom-berry: #af4a78;
+  --custom-red: #f43c02;
+  --custom-gray-dark: #181818;
+  --custom-gray-mid: #8a8a8a;
+  --custom-gray-light: #d6d6d6;
+  --custom-gray-very-light: #efefef;
+}
+
+*:focus,
+*:focus-visible,
+*:focus-within,
+*:active {
+  outline: none;
+}
+
+html,
+body {
+  @apply relative m-0 h-full w-full p-0 font-Lato text-gray-dark;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TYPOGRAPHY */
+p {
+  @apply p-0 text-xl leading-relaxed;
+  &.add-padding {
+    @apply pb-5;
+  }
+}
+h1 {
+  @apply p-0 font-PTSerif text-4xl font-bold text-primary;
+  &.add-padding {
+    @apply pb-5;
+  }
+}
+h2 {
+  @apply p-0 font-PTSerif text-2xl text-primary;
+  &.add-padding {
+    @apply pb-5;
+  }
+}
+h3 {
+  @apply p-0 font-PTSerif text-xl text-primary;
+  &.add-padding {
+    @apply pb-5;
+  }
+}
+h4,
+h4,
+h6 {
+  @apply p-0 font-PTSerif text-lg text-primary;
+  &.add-padding {
+    @apply pb-3;
+  }
+}
+a,
+.text-link-button {
+  @apply m-0 cursor-pointer p-0 text-primary underline duration-300;
+  font-size: inherit;
+  line-height: inherit;
+  height: inherit;
+
+  &.white-link, &.on-dark {
+    @apply text-white;
+  }
+  &:hover {
+    @apply no-underline;
+  }
+  &.active {
+    @apply no-underline text-secondary;
+  }
+}
+
+/* GLOBAL STYLES (Layout, ...) */
+.inner-box {
+  @apply m-auto h-full w-full max-w-screen-xl px-4;
+}
+
+/* Common Helper Classes */
+.tiny-spacer {
+  @apply m-0 h-2 w-full p-0;
+}
+.medium-spacer {
+  @apply m-0 h-4 w-full p-0;
+}
+.spacer {
+  @apply m-0 h-8 w-full p-0;
+}
+.big-spacer {
+  @apply m-0 h-12 w-full p-0;
+}
+.massive-spacer {
+  @apply m-0 h-20 w-full p-0;
+}
+.just-a-line {
+  @apply m-0 h-px w-full bg-gray-mid p-0;
+}
+
+/* Special Button Style */
+.btn-basic {
+  @apply block rounded-md border-0 px-12 py-4 text-lg font-bold leading-none text-white transition-all duration-500;
+  background: linear-gradient(to right, var(--custom-cyan) 0%, var(--custom-teal) 48%, var(--custom-cyan) 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 0.5rem var(--custom-gray-mid);
+
+  &:hover {
+    @apply cursor-pointer bg-right shadow-none;
+  }
+}
